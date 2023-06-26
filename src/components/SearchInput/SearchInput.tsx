@@ -1,13 +1,13 @@
 import { debounce } from "lodash";
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
 import { getBooksAsync } from "../../store/books";
 import { setQuery } from "../../store/search";
 import { SearchInputContainer } from "./SearchInput.styles";
+import { useAppDispatch } from "../../hooks/useAppDispatch"; // Reemplaza './app/hooks' con la ruta al archivo donde has definido `useAppDispatch`
 
 const SearchInput: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const debouncedSearch = debounce(
     (query) => dispatch(getBooksAsync(query)),
@@ -29,6 +29,7 @@ const SearchInput: React.FC = () => {
 
   return (
     <SearchInputContainer
+      data-testid="search-input"
       type="text"
       value={searchTerm}
       onChange={handleInputChange}

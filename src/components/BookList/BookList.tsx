@@ -7,18 +7,23 @@ import { BooksListContainer, Spinner, ArrowContainer } from "./BookList.styles";
 
 const BooksList: React.FC = () => {
   const books = useSelector(selectBooks);
-  const status = useSelector(selectBooksStatus);
+  const statusBooks = useSelector(selectBooksStatus);
   const query = useSelector(selectQuery);
 
   if (query === "") return;
 
   return (
-    <ArrowContainer>
+    <ArrowContainer data-testid="books-list">
       <BooksListContainer>
-        {(status === "loading" || books.length === 0) && <Spinner />}
+        {(statusBooks === "loading" || books.length === 0) && (
+          <Spinner data-testid="spinner" />
+        )}
         {books.map((book, index) => (
           <BookCard key={index} book={book} />
         ))}
+        {statusBooks === "failed" && (
+          <h4>This feature is not available right now</h4>
+        )}
       </BooksListContainer>
     </ArrowContainer>
   );

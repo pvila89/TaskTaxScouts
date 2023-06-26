@@ -12,7 +12,7 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
   const amazonUrl = getAmazonUrl(book.id_amazon);
 
   return (
-    <BookCardContainer>
+    <BookCardContainer data-testid="book-card">
       <BookImage src={getImageUrl(book.cover_i)} alt={book.title} />
       {amazonUrl !== "" && (
         <a href={amazonUrl} target="_blank" rel="noopener noreferrer">
