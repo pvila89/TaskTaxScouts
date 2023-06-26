@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { selectBooks, selectBooksStatus } from "../../store/books";
 import { selectQuery } from "../../store/search";
 import BookCard from "../BookCard/BookCard";
-import { BooksListContainer, Spinner, ArrowContainer } from "./BookList.styles";
+import { ArrowContainer, BooksListContainer, Spinner } from "./BookList.styles";
 
 const BooksList: React.FC = () => {
   const books = useSelector(selectBooks);

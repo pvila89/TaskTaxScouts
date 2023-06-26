@@ -11,7 +11,7 @@ test("Set the input value correctly", () => {
   );
   const input = screen.getByTestId("search-input") as HTMLInputElement;
 
-  fireEvent.change(input, { target: { value: "example" } });
+  fireEvent.change(input, { target: { value: "The Lord of the Rings" } });
 
-  expect(input.value).toBe("example");
+  expect(input.value).toBe("The Lord of the Rings");
 });

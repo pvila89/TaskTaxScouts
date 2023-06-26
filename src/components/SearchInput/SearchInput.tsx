@@ -1,9 +1,9 @@
 import { debounce } from "lodash";
 import React, { useEffect, useState } from "react";
+import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { getBooksAsync } from "../../store/books";
 import { setQuery } from "../../store/search";
 import { SearchInputContainer } from "./SearchInput.styles";
-import { useAppDispatch } from "../../hooks/useAppDispatch"; // Reemplaza './app/hooks' con la ruta al archivo donde has definido `useAppDispatch`
 
 const SearchInput: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
