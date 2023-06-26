@@ -16,7 +16,7 @@ The Application Name is a React-based platform designed to provide a fast and ef
 
 1. Clone this repository to your local machine.
 2. Run the command `npm install` to install the dependencies.
-3. Run the command `npm start` to start the application in your local development environment.
+3. Run the command `npm run dev` to start the application in your local development environment.
 
 
 ## Contact
